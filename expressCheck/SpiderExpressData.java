@@ -53,6 +53,15 @@ public class SpiderExpressData extends BaseController {
 					expressInfo = expressInfo.replaceAll("\\\\/a&gt;", "");
 				}
 				
+				//定义json设置key(reason, status, rowArr.length, success)保存到results中
+				JSONObject results = new JSONObject();
+				results.put("reason", infoJson.get("reason"));
+				results.put("status", infoJson.get("status"));
+				results.put("success", infoJson.get("success"));
+				results.put("allResults", rowArr.length());
+				
+				json.put("results", results);
+				
 				//把String转化成Json
 				JSONObject infoJson = new JSONObject(expressInfo);
 				
