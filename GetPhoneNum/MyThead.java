@@ -30,12 +30,12 @@ public class MyThread extends Thread {
     public static String userAgent =  "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.66 Safari/537.36";
  
     //配置您申请的KEY
-    public static final String APPKEY ="85927295a5d5a1fd356f376d38e31f4d";
+    public static final String APPKEY ="**************************";
 	
     public void run(){
-    	String sqlurl="jdbc:mysql://localhost:3306/rechargeonline"; 
-		String username = "root";
-		String password = "12345";
+    	String sqlurl="jdbc:mysql://localhost:3306/你的数据库"; 
+		String username = "数据库用户名";
+		String password = "数据库密码";
 		int getPhone=0;
 		switch(Thread.currentThread().getName()) {
 		case "A":
@@ -82,7 +82,7 @@ public class MyThread extends Thread {
         	Map params = new HashMap();//请求参数
             params.put("phone",phoneNum);//需要查询的手机号码或手机号码前7位
             phone += 1;
-            params.put("key","85927295a5d5a1fd356f376d38e31f4d");//应用APPKEY(应用详细页查询)
+            params.put("key","APPKEY");//应用APPKEY(应用详细页查询)
             params.put("dtype","json");//返回数据的格式,xml或json，默认json
  
 	        try {
