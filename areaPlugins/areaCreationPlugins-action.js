@@ -45,20 +45,17 @@ jQuery(document).ready(function () {
 	}
 
 	//省份
-	var aProvince = $('.province');
-	for (var i = 0; i < aProvince.length; i++) {
-		$('.province').eq(i).children("input").eq(0).click( function () {
+	var aProvince = $('li.province');
+	for (let i = 0; i < aProvince.length; i++) {
+		aProvince.eq(i).children("input").eq(0).click( function () {
+			let allCount = $(this).siblings("div").find("input").length;
 			var aCity = $(this).siblings("div").find("input");
 			var provinceLabel =  $(this).siblings("label");
 			var oLabel = provinceLabel.html().match(/[\u4e00-\u9fa5]+/);
 			if ( $(this).prop("checked") ) {
 				for (var j = 0; j < aCity.length; j++) {
 					aCity.eq(j).prop("checked", true);
-					provinceLabel.attr("oCount", function () {
-						var count = parseInt(provinceLabel.attr("oCount"));
-						count += 1;
-						provinceLabel.attr("oCount", count);
-					})
+					provinceLabel.attr("oCount", allCount);
 				}
 				provinceLabel.html(oLabel + "(" + provinceLabel.attr("oCount") + ")");
 				if (oOldItembox && $(oOldItembox).siblings("label").html()!=$(this).siblings("label").html()) {
