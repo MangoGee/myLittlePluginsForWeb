@@ -286,7 +286,7 @@
 														], "id" : "liaoning" },
 
 						{ "province" : "吉林", "city" : [	{ "name" : "长春", "id" : "changchun" },
-															{ "name" : "吉林", "id" : "jilin" }, 
+															{ "name" : "吉林", "id" : "jilinCity" }, 
 															{ "name" : "四平", "id" : "siping" },
 															{ "name" : "辽源", "id" : "liaoyuan" },
 															{ "name" : "通化", "id" : "tonghua" },
@@ -294,7 +294,7 @@
 															{ "name" : "松原", "id" : "songyuan" },
 															{ "name" : "白城", "id" : "baicheng" },
 															{ "name" : "延边朝鲜族自治州", "id" : "yanbian" }
-														], "id" : "jilin" },
+														], "id" : "jilinPro" },
 
 						{ "province" : "黑龙江", "city" : [	{ "name" : "哈尔滨", "id" : "haerbin" },
 															{ "name" : "齐齐哈尔", "id" : "qiqihaer" }, 
