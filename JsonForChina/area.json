@@ -237,7 +237,7 @@ var provinceAndCity = [
 														{ "name" : "南平", "id" : "nanping" },
 														{ "name" : "龙岩", "id" : "longyan" },
 														{ "name" : "宁德", "id" : "ningde" }
-													], "id" : "henan" },
+													], "id" : "fujian" },
 
 					{ "province" : "海南", "city" : [	{ "name" : "海口", "id" : "haikou" },
 														{ "name" : "三亚", "id" : "sanya" }, 
@@ -376,7 +376,7 @@ var provinceAndCity = [
 														{ "name" : "果洛", "id" : "guoluo" },
 														{ "name" : "玉树", "id" : "yushuqing" },
 														{ "name" : "海西", "id" : "haixi" }
-													], "id" : "ningxia" }
+													], "id" : "qinghai" }
 
 			 ], 
 		"id" : "northwest" },
