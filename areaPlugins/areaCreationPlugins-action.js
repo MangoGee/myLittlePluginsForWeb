@@ -1,8 +1,6 @@
 jQuery(document).ready(function () {
 	$(this).rechargeableareaCheckbox();
 
-	G.init.btn();
-
 	$("#sys-rechargeablearea").click(function () {
 		$("#sys-recharge").attr('disabled',"true");
 		func_rechargeablearea();
