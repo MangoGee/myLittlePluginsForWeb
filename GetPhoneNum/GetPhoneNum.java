@@ -1,4 +1,4 @@
-public class GetPhoneNum {
+`public class GetPhoneNum {
   public static void main(String[] args) {
       Thread thread1 = new Thread(new MyThread(), "A");
       Thread thread2 = new Thread(new MyThread(), "B");
@@ -21,6 +21,6 @@ public class GetPhoneNum {
       thread9.start();
       thread10.start();
   }
-}
+}`
 
 
