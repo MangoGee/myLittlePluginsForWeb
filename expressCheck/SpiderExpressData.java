@@ -35,7 +35,7 @@ public class SpiderExpressData extends BaseController {
 			String httpUrl = "http://www.kuaidi.com/index-ajaxselectcourierinfo-" + number + "-" + company + ".html";
 			
 			if (params.containsKey("company") && params.containsKey("number")) {	
-				Document doc = sed.getDocument(httpUrl);
+				Document doc = sed.getDocument(httpUrl,company,number);
 				
 				Elements elementsHTML = doc.select("body");
 				
@@ -81,9 +81,10 @@ public class SpiderExpressData extends BaseController {
 		return updateFailure("快递查询失败！");
 	}
 	
-	public Document getDocument (String url){
+	public Document getDocument (String url,String company,String number){
 		try {
-			return Jsoup.connect(url).get();
+			String referer= "http://www.kuaidi.com/all/"+ company +"/"+ number +".html";
+			return Jsoup.connect(url).header("Referer", referer).get();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -94,7 +95,7 @@ public class SpiderExpressData extends BaseController {
 		try{
 			SpiderExpressData sed = new SpiderExpressData();
 			//以HTML返回快递信息
-			Document doc = sed.getDocument("http://www.kuaidi.com/index-ajaxselectcourierinfo-227508615865-shentong.html");
+			Document doc = sed.getDocument("http://www.kuaidi.com/index-ajaxselectcourierinfo-227508615865-shentong.html","shentong","227508615865");
 			
 			//HTML提取出json形式的快递信息
 			Elements elementsHTML = doc.select("body");
