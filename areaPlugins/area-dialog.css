@@ -1,0 +1,38 @@
+ul {
+	list-style: none;
+	border: none;
+}
+.form-group {
+	position: relative;
+}
+.provinceDiv {
+	position: absolute;
+	top: 0;
+	left: 50px;
+}
+.areaList {
+	position: relative;
+}
+.areaList li{
+	float: left;
+	margin-right: 16px; 
+}
+.areaList li button {
+	border: none;
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+.itembox {
+	width: 300px;
+	height: auto;
+	background: #fff;
+	position: absolute;
+	z-index: 1;
+}
+.hideItembox {
+	display: none;
+}
+.showItembox {
+	display: block;
+}
