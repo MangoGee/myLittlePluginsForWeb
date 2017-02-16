@@ -1,0 +1,63 @@
+(function($) {
+	$.fn.stamper = function() {
+		var target = jQuery(this);
+		var opts = $.extend({
+			scale : 3, // 元素初始大小，在原始元素大小上的倍数
+			speed : 600 // 动画持续时间，单位毫秒
+		}, target);
+		this.each(function(index) {
+			
+			var orgiCoor = getElementCoordinate(target);
+			var initCoor = getStartCoordinate(target, opts.scale);
+			target.css({
+					'position' : "absolute",
+					'opacity' : "0",
+					'left' : initCoor.x + "px",
+					'top' : initCoor.y + "px",
+					'width' : initCoor.w + "px",
+					'height' : initCoor.h + "px",
+					'font-size' : ((initCoor.w)/8) + "px",
+					'color' : 'red',
+				})
+				.show()
+				.animate({
+					opacity : "1",
+					left : orgiCoor.x + "px",
+					top : orgiCoor.y + "px",
+					width : orgiCoor.w + "px",
+					height : orgiCoor.h + "px"
+				}, opts.speed, opts.complete);
+		});
+	};
+	
+	/** 获取元素的落脚坐标点（以当前元素为基准）和尺寸信息，格式：{x:10,y:20,h:100,w:200} **/
+	function getElementCoordinate(target) {
+		var offset = $(target).offset();
+		console.log(offset);
+		console.log($(target).width());
+		console.log($(target).height());
+		var cx = window.screen.width*0.3;
+		var cy = window.screen.height*0.3;
+		return {
+			x : cx,
+			y : cy,
+			w : window.screen.width/3,
+			h : window.screen.width/6
+		};
+	}
+	
+	/** 给定倍数（multiple）获取元素的开始位置和大小信息，格式：{x:10,y:20,h:100,w:200} **/
+	function getStartCoordinate(target, multiple) {
+		var offset = $(target).offset();
+		var cx = $(target).width()/2;
+		var cy = offset.top + $(target).height()/2;
+		var width = window.screen.width * multiple;
+		var height = window.screen.height * multiple;
+		return {
+			x : cx - width/2,
+			y : cy - height/2,
+			w : width,
+			h : height
+		};
+	}
+})(jQuery);
