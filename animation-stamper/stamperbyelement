@@ -57,7 +57,7 @@
 			x : cx - width/2,
 			y : cy - height/2,
 			w : width,
-			h : height
-		};
+			h : height		
+};
 	}
 })(jQuery);
